@@ -44,6 +44,18 @@
     });
   });
 
+  /* ---------- Reading progress bar ---------- */
+  var readProgress = document.getElementById("readProgress");
+  if (readProgress) {
+    var updateProgress = function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      readProgress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+  }
+
   /* ---------- Shoe comparison tabs ---------- */
   var shoeTabs = document.querySelectorAll(".shoe-tab");
   shoeTabs.forEach(function (tab) {

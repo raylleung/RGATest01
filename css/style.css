@@ -1220,3 +1220,42 @@ li { margin-bottom: 0.4em; }
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ---------- Reading progress bar ---------- */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--data-accent);
+  z-index: 200;
+  transition: width 0.08s linear;
+}
+
+/* ---------- Chip clouds (compact lists) ---------- */
+.chip-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--stone-300);
+  color: var(--stone-800);
+  margin: 0;
+}
+.sl-strengths .chip { border-color: rgba(92, 122, 82, 0.45); }
+.sl-strengths .chip::before { content: "+"; color: var(--risk-low); font-weight: 700; }
+.sl-limitations .chip { border-color: rgba(166, 61, 47, 0.4); }
+.sl-limitations .chip::before { content: "!"; color: var(--risk-high); font-weight: 700; }
